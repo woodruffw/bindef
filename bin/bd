@@ -1,0 +1,60 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "optparse"
+
+require "bindef"
+
+options = {
+  input: STDIN,
+  output: STDOUT,
+  error: STDERR,
+  verbose: false,
+  warnings: true,
+}
+
+at_exit do
+  %i[input output error].each { |io| options[io].close }
+end
+
+OptionParser.new do |parser|
+  parser.banner = "Usage: bd [options]"
+
+  parser.on "-i", "--input FILE", String, "Read input from FILE (default: stdin)" do |input|
+    abort("Error: No such file: #{input}") unless File.file?(input)
+    options[:input] = File.open(input, "r")
+  end
+
+  parser.on "-o", "--output FILE", String, "Write output to FILE (default: stderr)" do |output|
+    abort("Error: #{output} exists, not overwriting") if File.file?(output)
+    options[:output] = File.open(output, "wb")
+  end
+
+  parser.on "-v", "--verbose", "Write verbose/debugging information to stderr" do
+    options[:verbose] = true
+  end
+
+  parser.on "-W", "--no-warnings", "Suppress warning messages" do
+    options[:warnings] = false
+  end
+
+  parser.on "-e", "--extra ext1,ext2,ext3", Array, "Extra command set(s) to load" do |extras|
+    extras.each { |e| require "bindef/extras/#{e}" }
+  end
+end.parse!
+
+bindef = Bindef.new(options[:output],
+                    options[:error],
+                    verbose: options[:verbose],
+                    warnings: options[:warnings])
+
+options[:error].puts "W: output looks like a tty" if options[:output].tty? && options[:verbose]
+
+begin
+  bindef.instance_eval options[:input].read, "input", 1
+rescue Bindef::EvaluationError => e
+  options[:error].puts "E: #{e.message}"
+  # Pop the main and instance_eval scopes off of the backtrace.
+  e.backtrace.pop 2
+  raise e
+end

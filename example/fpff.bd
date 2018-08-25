@@ -1,0 +1,16 @@
+# fpff.tn: emits a simple but valid FPFF stream using the TLV extra
+# FPFF spec: https://github.com/UMD-CSEC/fpff
+# make sure to run with `-e tlv` for the `tlv_u32` method.
+
+# header: magic, version, timestamp, author, nsects
+u32 0xBEFEDADE
+u32 0x1
+u32 Time.now.to_i # look, a dynamic timestamp!
+str "briong\x00\x00" # manual null padding, could be abstracted with a method
+u32 2
+
+# section 1:
+tlv_u32 0x2, str: "look at my UTF-8 section!"
+
+# section 2:
+tlv_u32 0x7, u32: 0x0

@@ -1,0 +1,19 @@
+# encodings.tn: demonstrates the use of `pragma`
+# for setting the encoding of emitted strings
+
+str "this is a string in the default encoding (utf-8)"
+
+pragma encoding: "utf-16"
+
+str "this is a utf-16 encoded string (with BOM)"
+str "this is also utf-16, since we set the pragma above"
+
+pragma encoding: "utf-8"
+
+str "back to utf-8"
+
+pragma encoding: "utf-32" do
+  str "and now utf-32, inside a block"
+end
+
+str "back to utf-8, without an explicit pragma!"

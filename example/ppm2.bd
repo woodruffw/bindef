@@ -1,0 +1,22 @@
+# ppm2.tn: demonstrates the creation of a slightly more interesting
+# image via a helper method
+
+# Emits a sequence of red, green, and blue bytes representing a pixel.
+def rgb(red, green, blue)
+  u8 red
+  u8 green
+  u8 blue
+end
+
+# Binary PPM with dimensions 256x256 and depth 255
+str "P6 256 256 255\n"
+
+# bindef is just ruby underneath, so we can use normal syntax features
+
+0.upto 255 do |r|
+  0.upto 255 do |g|
+    # Increase the red and green values incrementally
+    # while keeping blue constant at 0
+    rgb r, g, 0
+  end
+end

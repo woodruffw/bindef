@@ -1,0 +1,19 @@
+PATH
+  remote: .
+  specs:
+    bindef (0.0.1)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    yard (0.9.16)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bindef!
+  yard (~> 0.9.9)
+
+BUNDLED WITH
+   1.16.3

@@ -1,0 +1,19 @@
+# ppm.tn: demonstrates the creation of a small (3x2) image
+# via a helper method.
+
+# Emits a sequence of red, green, and blue bytes representing a pixel.
+def rgb(red, green, blue)
+  u8 red
+  u8 green
+  u8 blue
+end
+
+str "P6 3 2 255\n"
+
+rgb 255, 0, 0
+rgb 0, 255, 0
+rgb 0, 0, 255
+
+rgb 255, 255, 0
+rgb 0, 0, 0
+rgb 255, 255, 255

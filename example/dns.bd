@@ -1,0 +1,41 @@
+# dns.tn: Build a basic DNS request message.
+# Example invocation: tn -e string < example/dns.tn | nc -q 0 -w 2 -u 8.8.8.8 53
+
+# Network order.
+pragma endian: :big
+
+# Transaction ID (normally something less guessable, but doesn't matter here)
+u16 0
+
+# Flags
+# First bit: query or response (0=query)
+# Next 4 bits: query type (0000=standard query)
+# Next two bits: authoritative answer (irrelevant) / whether truncated (0=no)
+# Next two bits: recursion desired (1=yes) / recursion available (irrelevant)
+# Next 3 bits: reserved (must be 0)
+# Next 4 bits: response code (irrelevant)
+u16 0b0_0000_00_10_000_0000
+
+# Number of questions (we're asking just one)
+u16 1
+
+# Number of answer resources (irrelevant)
+u16 0
+
+# Number of authority resources (irrelevant)
+u16 0
+
+# Number of additional resources (irrelevant)
+u16 0
+
+# First (and only) question:
+lstr :u8, "www"
+lstr :u8, "yossarian"
+lstr :u8, "net"
+u8 0
+
+# Type: A
+u16 1
+
+# Class: IN
+u16 1
