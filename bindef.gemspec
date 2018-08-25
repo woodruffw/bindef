@@ -10,6 +10,7 @@ Gem::Specification.new do |s|
   s.email                 = "william@yossarian.net.com"
   s.files                 = Dir["LICENSE", "*.md", ".yardopts", "lib/**/*"]
   s.required_ruby_version = ">= 2.3.0"
+  s.homepage              = "https://github.com/woodruffw/bindef"
   s.license               = "MIT"
 
   s.executables << "bd"
