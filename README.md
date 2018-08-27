@@ -31,7 +31,7 @@ pragma endian: :big
 u32 0xFF000000
 ```
 
-The [examples directory](examples/) has more. Read the [SYNTAX](SYNTAX.md) file for a
+The [example directory](example/) has more. Read the [SYNTAX](SYNTAX.md) file for a
 complete listing of commands and pragmas.
 
 ## Installation
