@@ -1,16 +1,20 @@
 # frozen_string_literal: true
 
+if ENV["COVERAGE"]
+  require "simplecov"
+  SimpleCov.start do
+    add_filter "spec/"
+  end
+
+  if ENV["CI"]
+    require "codecov"
+    SimpleCov.formatter = SimpleCov::Formatter::Codecov
+  end
+end
+
 require "rspec"
 
 require "bindef"
-
-if ENV["COVERAGE"]
-  require "simplecov"
-  SimpleCov.start
-
-  require "codecov"
-  SimpleCov.formatter = SimpleCov::Formatter::Codecov
-end
 
 # Helper methods for specs.
 module Helpers
