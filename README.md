@@ -1,6 +1,8 @@
 bindef
 ========
 
+[![Gem Version](https://badge.fury.io/rb/bindef.svg)](https://badge.fury.io/rb/bindef)
+
 `bindef` is a DSL and command-line tool for building binary files.
 
 It's inspired by [t2b](https://github.com/thosakwe/t2b), but with a few crucial differences:
