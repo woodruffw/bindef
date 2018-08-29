@@ -9,7 +9,7 @@ if ENV["COVERAGE"]
   SimpleCov.start
 
   require "codecov"
-  Simple.formatter = SimpleCov::Formatter::Codecov
+  SimpleCov.formatter = SimpleCov::Formatter::Codecov
 end
 
 # Helper methods for specs.
