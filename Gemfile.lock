@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    bindef (0.0.2)
+    bindef (0.0.3)
 
 GEM
   remote: https://rubygems.org/
