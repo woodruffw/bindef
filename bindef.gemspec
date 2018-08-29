@@ -15,5 +15,6 @@ Gem::Specification.new do |s|
 
   s.executables << "bd"
 
+  s.add_development_dependency "rspec", "~> 3.8"
   s.add_development_dependency "yard", "~> 0.9.9"
 end

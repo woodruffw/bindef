@@ -1,11 +1,25 @@
 PATH
   remote: .
   specs:
-    bindef (0.0.1)
+    bindef (0.0.2)
 
 GEM
   remote: https://rubygems.org/
   specs:
+    diff-lcs (1.3)
+    rspec (3.8.0)
+      rspec-core (~> 3.8.0)
+      rspec-expectations (~> 3.8.0)
+      rspec-mocks (~> 3.8.0)
+    rspec-core (3.8.0)
+      rspec-support (~> 3.8.0)
+    rspec-expectations (3.8.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.8.0)
+    rspec-mocks (3.8.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.8.0)
+    rspec-support (3.8.0)
     yard (0.9.16)
 
 PLATFORMS
@@ -13,6 +27,7 @@ PLATFORMS
 
 DEPENDENCIES
   bindef!
+  rspec (~> 3.8)
   yard (~> 0.9.9)
 
 BUNDLED WITH

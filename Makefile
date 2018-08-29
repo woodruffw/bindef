@@ -7,4 +7,4 @@ doc:
 
 .PHONY: test
 test:
-	@echo "how about contributing some tests?"
+	bundle exec rspec
