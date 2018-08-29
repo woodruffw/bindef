@@ -4,6 +4,15 @@ require "rspec"
 
 require "bindef"
 
+if ENV["COVERAGE"]
+  require "simplecov"
+  SimpleCov.start
+
+  require "codecov"
+  Simple.formatter = SimpleCov::Formatter::Codecov
+end
+
+# Helper methods for specs.
 module Helpers
   def bindef(input = nil, verbose: false, warnings: true)
     output = StringIO.new
