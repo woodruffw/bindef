@@ -41,6 +41,11 @@ OptionParser.new do |parser|
   parser.on "-e", "--extra ext1,ext2,ext3", Array, "Extra command set(s) to load" do |extras|
     extras.each { |e| require "bindef/extras/#{e}" }
   end
+
+  parser.on "-V", "--version" do
+    STDERR.puts "bd (bindef) version #{Bindef::VERSION}"
+    exit
+  end
 end.parse!
 
 bindef = Bindef.new(options[:output],
