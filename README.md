@@ -4,6 +4,7 @@ bindef
 [![Gem Version](https://badge.fury.io/rb/bindef.svg)](https://badge.fury.io/rb/bindef)
 [![Build Status](https://travis-ci.org/woodruffw/bindef.svg?branch=master)](https://travis-ci.org/woodruffw/bindef)
 [![Coverage Status](https://codecov.io/gh/woodruffw/bindef/branch/master/graph/badge.svg)](https://codecov.io/gh/woodruffw/bindef)
+[![Maintainability](https://api.codeclimate.com/v1/badges/bc780f5233688a8e5951/maintainability)](https://codeclimate.com/github/woodruffw/bindef/maintainability)
 
 `bindef` is a DSL and command-line tool for building binary files.
 
