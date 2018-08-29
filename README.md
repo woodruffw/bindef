@@ -2,6 +2,7 @@ bindef
 ========
 
 [![Gem Version](https://badge.fury.io/rb/bindef.svg)](https://badge.fury.io/rb/bindef)
+[![Build Status](https://travis-ci.org/woodruffw/bindef.svg?branch=master)](https://travis-ci.org/woodruffw/bindef)
 
 `bindef` is a DSL and command-line tool for building binary files.
 
