@@ -3,6 +3,12 @@
 require_relative "spec_helper"
 
 describe Bindef do
+  it "raises CommandError on an unknown command" do
+    expect do
+      bindef "nonexistent_command"
+    end.to raise_error(Bindef::CommandError, /unknown command: nonexistent_command/)
+  end
+
   describe "#pragma" do
     it "sets a pragma correctly" do
       bd, _ = bindef "pragma verbose: true"
