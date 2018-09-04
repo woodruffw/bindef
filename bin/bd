@@ -53,7 +53,7 @@ bindef = Bindef.new(options[:output],
                     verbose: options[:verbose],
                     warnings: options[:warnings])
 
-options[:error].puts "W: output looks like a tty" if options[:output].tty? && options[:verbose]
+options[:error].puts "W: output looks like a tty" if options[:output].tty? && options[:warnings]
 
 begin
   bindef.instance_eval options[:input].read, "input", 1
