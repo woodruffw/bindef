@@ -48,6 +48,7 @@ class Bindef
   # Builds a string containing the given value packed into the given format.
   # @param value [Object] the value to emit
   # @param fmt [String] the `Array#pack` format to emit it in
+  # @api private
   def blobify(value, fmt)
     [value].pack(fmt)
   end
