@@ -25,7 +25,7 @@ OptionParser.new do |parser|
     options[:input] = File.open(input, "r")
   end
 
-  parser.on "-o", "--output FILE", String, "Write output to FILE (default: stderr)" do |output|
+  parser.on "-o", "--output FILE", String, "Write output to FILE (default: stdout)" do |output|
     abort("Error: #{output} exists, not overwriting") if File.file?(output)
     options[:output] = File.open(output, "wb")
   end
