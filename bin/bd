@@ -43,7 +43,7 @@ OptionParser.new do |parser|
   end
 
   parser.on "-V", "--version" do
-    STDERR.puts "bd (bindef) version #{Bindef::VERSION}"
+    puts "bd (bindef) version #{Bindef::VERSION}"
     exit
   end
 end.parse!

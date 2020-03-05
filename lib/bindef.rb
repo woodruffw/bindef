@@ -63,8 +63,13 @@ class Bindef
 
   # Captures unknown commands and raises an appropriate error.
   # @api private
-  def method_missing(*args) # rubocop:disable MissingRespondToMissing, MethodMissingSuper
+  def method_missing(*args)
     raise CommandError, "unknown command: #{args.join(" ")}"
+  end
+
+  # @api private
+  def respond_to_missing?(*_args)
+    true
   end
 
   # Changes the values of the given pragma keys.
