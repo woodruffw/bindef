@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Bindef
+class Bindef # rubocop:disable Style/Documentation
   module Extras
     # Potentially useful 128-bit integer emission commands.
     module Int128

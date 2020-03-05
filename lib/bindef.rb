@@ -67,6 +67,11 @@ class Bindef
     raise CommandError, "unknown command: #{args.join(" ")}"
   end
 
+  # @api private
+  def respond_to_missing?(*_args)
+    true
+  end
+
   # Changes the values of the given pragma keys.
   # @see PRAGMA_SCHEMA
   # @param hsh [Hash] the keys and values to update the pragma state with
@@ -85,10 +90,10 @@ class Bindef
       pragmas[key] = value
     end
 
-    if block_given?
-      yield
-      pragmas.replace old_pragmas
-    end
+    return unless block_given?
+
+    yield
+    pragmas.replace old_pragmas
   end
 
   # Emits a string.
