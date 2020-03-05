@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Bindef
+class Bindef # rubocop:disable Style/Documentation
   module Extras
     # Helpers for {Extras::Ctrl}.
     module CtrlHelper

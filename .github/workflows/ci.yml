@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+  schedule:
+    - cron: '0 12 * * *'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        ruby:
+          - "2.4"
+          - "2.5"
+          - "2.6"
+          - "2.7"
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby }}
+      - name: deps
+        run: |
+          gem install bundler
+          bundle install --jobs 4 --retry 3
+      - name: lint
+        run: make lint
+      - name: test
+        run: make test
+      - name: doc
+        run: make doc

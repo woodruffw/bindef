@@ -1,7 +1,5 @@
-# Global style enforcement.
-
 AllCops:
-  TargetRubyVersion: 2.3
+  TargetRubyVersion: 2.4
 
 Style/StringLiterals:
   EnforcedStyle: double_quotes
@@ -27,8 +25,17 @@ Style/RescueModifier:
 Style/TrailingUnderscoreVariable:
   Enabled: false
 
-Metrics/LineLength:
+Style/HashEachMethods:
+  Enabled: true
+
+Style/HashTransformKeys:
+  Enabled: true
+
+Style/HashTransformValues:
+  Enabled: true
+
+Layout/LineLength:
   Max: 100
 
-Metrics/MethodLength:
+Layout/MethodLength:
   Max: 15
