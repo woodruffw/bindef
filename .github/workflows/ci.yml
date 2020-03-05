@@ -30,6 +30,6 @@ jobs:
       - name: lint
         run: make lint
       - name: test
-        run: make test
+        run: COVERAGE=1 make test
       - name: doc
         run: make doc

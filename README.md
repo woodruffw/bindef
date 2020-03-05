@@ -2,7 +2,7 @@ bindef
 ========
 
 [![Gem Version](https://badge.fury.io/rb/bindef.svg)](https://badge.fury.io/rb/bindef)
-[![Build Status](https://travis-ci.org/woodruffw/bindef.svg?branch=master)](https://travis-ci.org/woodruffw/bindef)
+[![Build Status](https://img.shields.io/github/workflow/status/woodruffw/bindef/CI/master)](https://github.com/woodruffw/bindef/actions?query=workflow%3ACI)
 [![Coverage Status](https://codecov.io/gh/woodruffw/bindef/branch/master/graph/badge.svg)](https://codecov.io/gh/woodruffw/bindef)
 [![Maintainability](https://api.codeclimate.com/v1/badges/bc780f5233688a8e5951/maintainability)](https://codeclimate.com/github/woodruffw/bindef/maintainability)
 
