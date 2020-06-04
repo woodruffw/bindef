@@ -1,6 +1,7 @@
 bindef
 ========
 
+![license](https://raster.shields.io/badge/license-MIT%20with%20restrictions-green.png)
 [![Gem Version](https://badge.fury.io/rb/bindef.svg)](https://badge.fury.io/rb/bindef)
 [![Build Status](https://img.shields.io/github/workflow/status/woodruffw/bindef/CI/master)](https://github.com/woodruffw/bindef/actions?query=workflow%3ACI)
 [![Coverage Status](https://codecov.io/gh/woodruffw/bindef/branch/master/graph/badge.svg)](https://codecov.io/gh/woodruffw/bindef)

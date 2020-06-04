@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.files                 = Dir["LICENSE", "*.md", ".yardopts", "lib/**/*"]
   s.required_ruby_version = ">= 2.3.0"
   s.homepage              = "https://github.com/woodruffw/bindef"
-  s.license               = "MIT"
+  s.license               = "Nonstandard"
 
   s.executables << "bd"
 
