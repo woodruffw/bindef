@@ -34,7 +34,7 @@ Style/HashTransformKeys:
 Style/HashTransformValues:
   Enabled: true
 
-Style/MethodMissingSuper:
+Lint/MissingSuper:
   Enabled: false
 
 Layout/LineLength:
