@@ -6,9 +6,9 @@ require "optparse"
 require "bindef"
 
 options = {
-  input: STDIN,
-  output: STDOUT,
-  error: STDERR,
+  input: $stdin,
+  output: $stdout,
+  error: $stderr,
   verbose: false,
   warnings: true,
 }

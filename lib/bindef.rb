@@ -12,7 +12,7 @@ class Bindef
   attr_reader :pragmas
 
   # @api private
-  def initialize(output = STDOUT, error = STDERR, verbose: false, warnings: true)
+  def initialize(output = $stdout, error = $stderr, verbose: false, warnings: true)
     @output = output
     @error = error
     @pragmas = DEFAULT_PRAGMAS.dup.update(verbose: verbose, warnings: warnings)
